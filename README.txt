@@ -1,11 +1,10 @@
 creating valid application's keys:
-https://api.ovh.com/g934.first_step_with_api
-https://github.com/ovh/python-ovh
+https://eu.api.ovh.com/createApp/
 
 create file ovh.conf:
 
     [default]
-    ; general configuration: default endpoint
+    ;general configuration: default endpoint
     endpoint=ovh-eu
 
     ;ovh-eu for OVH Europe API
@@ -19,11 +18,16 @@ create file ovh.conf:
     ;configuration specific to 'ovh-eu' endpoint
     application_key=my_app_key
     application_secret=my_application_secret
-    ; uncomment following line when writing a script application
-    ; with a single consumer key.
+    ;uncomment following line when writing a script application
+    ;with a single consumer key.
     ;consumer_key=my_consumer_key
 
-Then run python-script (for all methods: GET, POST, DELETE, PUT - FULL ACCESS) and follow steps:
+
+Install python ovh lib:
+
+    pip install ovh
+
+Then run python-script (for all methods: GET, POST, DELETE, PUT - FULL ACCESS(!) ) and follow steps:
 
     # -*- encoding: utf-8 -*-
 
@@ -34,7 +38,7 @@ Then run python-script (for all methods: GET, POST, DELETE, PUT - FULL ACCESS) a
 
     # Request RO, /me API access
     ck = client.new_consumer_key_request()
-    ck.add_rules(ovh.API_READ_ONLY, "/me")
+    ck.add_recursive_rules(ovh.API_READ_WRITE, '/')
 
     # Request token
     validation = ck.request()
