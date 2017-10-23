@@ -2,7 +2,8 @@ creating valid application's keys:
 https://api.ovh.com/g934.first_step_with_api
 https://github.com/ovh/python-ovh
 
-create file ovh.conf
+create file ovh.conf:
+
     [default]
     ; general configuration: default endpoint
     endpoint=ovh-eu
@@ -22,7 +23,7 @@ create file ovh.conf
     ; with a single consumer key.
     ;consumer_key=my_consumer_key
 
-# Then run python-script (for all methods: GET, POST, DELETE, PUT - FULL ACCESS) and follow steps:
+Then run python-script (for all methods: GET, POST, DELETE, PUT - FULL ACCESS) and follow steps:
 
     # -*- encoding: utf-8 -*-
 
@@ -49,7 +50,7 @@ create file ovh.conf
 
 or like so:
 
-    curl -s -H "Content-type: application/json" --header "X-Ovh-Application:YOURAPPLICATIONKEY" --data '{"accessRules":[{"method":"GET","path":"/*"},{"method":"POST","path":"/*"},{"method":"PUT","path":"/*"},{"method":"DELETE","path":"/*"}]}' https://api.ovh.com/1.0/auth/credential | python -m json.tool
+curl -s -H "Content-type: application/json" --header "X-Ovh-Application:YOURAPPLICATIONKEY" --data '{"accessRules":[{"method":"GET","path":"/*"},{"method":"POST","path":"/*"},{"method":"PUT","path":"/*"},{"method":"DELETE","path":"/*"}]}' https://api.ovh.com/1.0/auth/credential | python -m json.tool
 
 response:
     {
@@ -59,4 +60,4 @@ response:
     }
 
 
-After that you can do evething you want via OVH OVH.
+After that you can do evething you want via OVH API.
