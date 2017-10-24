@@ -4,6 +4,7 @@ import json
 import ovh
 import sys
 
+# pass as parameter container ID you want to see 
 containerid = sys.argv[1]
 
 client = ovh.Client(
