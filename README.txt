@@ -64,4 +64,4 @@ response:
     }
 
 
-After that you can do evething you want via OVH API.
+After that you can do everything you want via OVH API.
