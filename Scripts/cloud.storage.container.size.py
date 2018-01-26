@@ -14,7 +14,7 @@ client = ovh.Client(
     consumer_key='consumer_key',       # Consumer Key
 )
 
-result = client.get('/cloud/project/11463cd19d7e4bf7be1c5a64991f37fd/storage/' + containerid)
+result = client.get('/cloud/project/YOUROWNID/storage/' + containerid)
 
 data = json.dumps(result, indent=4)
 resp = json.loads(data)
